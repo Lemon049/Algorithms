@@ -8,24 +8,28 @@ using namespace std;
 
 void heapSort(vector <int>& myVector, int len)
 {
-    int numberOfSortedElements;
+    int numberOfSortedElements = 0;
    // int maxValue = myVector[0];
-    int whichElement;
+    int whichElement =0;
     int j =0;
-   // while (numberOfSortedElements == len-1)
+   //while (numberOfSortedElements == len-1)
+   for(int f = 0; f < len; f++ )
     {
+
         int maxValue = myVector[j];
-        for (int i = 1 ; i < len; i++) {
+        for (int i = j+1; i < len; i++) {
 
             if (myVector[i] > maxValue) {
                 maxValue = myVector[i];
-                whichElement = i;S
+                whichElement = i;
             }
         }
+        if(myVector[j] != myVector[whichElement] && whichElement !=0)
             swap(myVector[j],myVector[whichElement]);
             j++;
 
-       // numberOfSortedElements++;
+        whichElement =0;
+
     }
 
 
