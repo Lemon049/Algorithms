@@ -2,6 +2,7 @@
 #include <iostream>
 #include "InsertionSort.h"
 #include "createRandVector.h"
+#include "HeapSort.h"
 
 #include <iostream>
 #include <chrono>
@@ -11,14 +12,14 @@
 using namespace std;
 
 int main() {
-
-
-   vector <int>a=createRandomVector(100);
-   insert(a,a.size());
+   vector <int>a=createRandomVector(3);
+   //insertionSort(a,a.size());
+   heapSort(a,a.size());
    if (is_sorted(a.begin(),a.end()))
    cout<<"true";
-   for(int i=0; i<a.size()-1; i++)
+   for(int i=0; i<a.size(); i++)
    {
     cout<<" "<<a[i];
    }
+   return 0;
 }

@@ -6,10 +6,12 @@
 #include <thread>
 #include <cstdlib>
 #include <vector>
+#include <ctime>
 using namespace std;
 
 vector<int> createRandomVector(int size)
 {
+
     vector<int> vec(size);
     for (int i = 0; i < size; i++)
     {
