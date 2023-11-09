@@ -8,8 +8,7 @@ using namespace std;
 
 void heapSort(vector <int>& myVector, int len)
 {
-    int numberOfSortedElements = 0;
-   // int maxValue = myVector[0];
+    //int numberOfSortedElements = 0;
     int whichElement =0;
     int j =0;
    //while (numberOfSortedElements == len-1)
@@ -29,9 +28,9 @@ void heapSort(vector <int>& myVector, int len)
             j++;
 
         whichElement =0;
-
+      //  numberOfSortedElements++;
     }
-
+    //reverse(myVector.begin(), myVector.end());
 
 
 
