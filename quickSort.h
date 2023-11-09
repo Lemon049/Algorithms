@@ -4,69 +4,89 @@
 
 #include <algorithm>
 #include <vector>
+#include <iostream>
+
+int quick(vector<int> &vector, int len);
+
 using namespace std;
 
+
 void quickSort(vector <int>& myVector, int len) {
+    int a = quick(myVector,len);
+    cout<<a<<"HEre";
+    while (is_sorted(myVector.begin(), myVector.begin() + a)) {
+if (a==0)
+    break;
+        a = quick(myVector, a);
+        a--;
 
-        int pivotIndex =len/2;
-        int i =-1;
-        int temp = 0;
-        int b = 0;
-        int d =0;
-        cout<<myVector[pivotIndex];
-        cout<<"NNN";
 
-        for(int j=0;j<pivotIndex;)
+    }
+
+
+
+// quick(myVector,len);
+
+    }
+
+
+
+int quick(vector <int> &myVector, int len)
+{
+    int pivotIndex = len / 2;
+    int temp, b,d;
+
+
+    cout << myVector[pivotIndex]<<"|";
+    int SecondPartIndex = 0;
+//(is_sorted(myVector.begin(), myVector.begin() + pivotIndex))
+
+    for (int j = 0; j < pivotIndex;) {
+        if (myVector[j] < myVector[pivotIndex]) {
+            j++;
+        } else //if (myVector[0]!=myVector[pivotIndex])
         {
-            if (myVector[j]<myVector[pivotIndex])
-            {
-                j++;
+
+            temp = myVector[j];
+            for (int b = j; b < pivotIndex; b++) {
+                myVector[b] = myVector[b + 1];
             }
-            else //if (myVector[0]!=myVector[pivotIndex])
+            myVector[pivotIndex] = temp;
+            pivotIndex -= 1;
+        }
+
+
+    }
+
+
+
+    //vector<int> subsetVector(myVector.begin(), myVector.begin() + pivotIndex);
+
+    if (pivotIndex != len && pivotIndex != 0) {
+        for (int j = pivotIndex + 1; j < len;) {
+            if (myVector[j] > myVector[pivotIndex]) {
+                j++;
+            } else //if (myVector[0]!=myVector[pivotIndex])
             {
 
                 temp = myVector[j];
-                for(int b = j;b<pivotIndex;b++)
-                {
-                    myVector[b]=myVector[b+1];
+                for (int d = j; d != pivotIndex; d--) {
+                    myVector[d] = myVector[d - 1];
                 }
                 myVector[pivotIndex] = temp;
-                pivotIndex -=1;
+                pivotIndex += 1;
+                j = pivotIndex + 1;
             }
 
         }
 
-        if (pivotIndex != len && pivotIndex != 0)
-        {
-            for(int j=pivotIndex+1;j<len;)
-            {
-                if (myVector[j]>myVector[pivotIndex])
-                {
-                    j++;
-                }
-                else //if (myVector[0]!=myVector[pivotIndex])
-                {
+    }
 
-                    temp = myVector[j];
-                    for(int d = j;d!=pivotIndex;d--)
-                    {
-                        myVector[d]=myVector[d-1];
-                    }
-                    myVector[pivotIndex] = temp;
-                    pivotIndex +=1;
-                    j=pivotIndex+1;
-                }
+    // for(int y = 4;(is_sorted(myVector.begin(), myVector.begin() + pivotIndex));y--)
 
-            }
-
-        }
-
-
-
-
-
-
+        return pivotIndex;
 }
+
 
 
 #endif
