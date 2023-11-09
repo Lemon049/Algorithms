@@ -12,7 +12,9 @@ void quickSort(vector <int>& myVector, int len) {
         int i =-1;
         int temp = 0;
         int b = 0;
-
+        int d =0;
+        cout<<myVector[pivotIndex];
+        cout<<"NNN";
 
         for(int j=0;j<pivotIndex;)
         {
@@ -24,7 +26,7 @@ void quickSort(vector <int>& myVector, int len) {
             {
 
                 temp = myVector[j];
-                for(int b = j;b<myVector[pivotIndex];b++)
+                for(int b = j;b<pivotIndex;b++)
                 {
                     myVector[b]=myVector[b+1];
                 }
@@ -33,6 +35,32 @@ void quickSort(vector <int>& myVector, int len) {
             }
 
         }
+
+        if (pivotIndex != len && pivotIndex != 0)
+        {
+            for(int j=pivotIndex+1;j<len;)
+            {
+                if (myVector[j]>myVector[pivotIndex])
+                {
+                    j++;
+                }
+                else //if (myVector[0]!=myVector[pivotIndex])
+                {
+
+                    temp = myVector[j];
+                    for(int d = j;d!=pivotIndex;d--)
+                    {
+                        myVector[d]=myVector[d-1];
+                    }
+                    myVector[pivotIndex] = temp;
+                    pivotIndex +=1;
+                    j=pivotIndex+1;
+                }
+
+            }
+
+        }
+
 
 
 
