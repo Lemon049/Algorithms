@@ -13,15 +13,15 @@ using namespace std;
 
 void quickSort(vector <int>& myVector, int len) {
     int a = quick(myVector,len);
-    cout<<a<<"HEre";
-    while (is_sorted(myVector.begin(), myVector.begin() + a)) {
-if (a==0)
-    break;
-        a = quick(myVector, a);
-        a--;
+
+   // while (is_sorted(myVector.begin(), myVector.begin() + a)) {
+//if (a==0)
+    //break;
+      //  a = quick(myVector, a);
+     //   a--;
 
 
-    }
+    ///}
 
 
 
@@ -30,6 +30,7 @@ if (a==0)
     }
 
 
+    int quick(vec, int left, int right)
 
 int quick(vector <int> &myVector, int len)
 {
