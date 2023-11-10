@@ -12,7 +12,7 @@ int number =0;
 int mNumber = 10;
 int dNumber = 1;
 int maxValue = myVector[0];
-
+int temp=0;
 int numberOfDigits =1;
 int lastValue = 0;
     for(int f = 1; f < len; f++ ) {
@@ -24,7 +24,7 @@ int lastValue = 0;
         maxValue/=10;
         numberOfDigits++;
     }
-    while(maxValue>9);
+
 
     for (int j =1;j<numberOfDigits+1;j++) {
         lastValue = 0;
@@ -40,14 +40,21 @@ int lastValue = 0;
             for(int y =0;y<10;y++)
             {
                 for (int i = 0; i < len; i++) {
-
+                        if(i==3)
+                            cout<<"";
                     number = (myVector[i] % mNumber) / dNumber;
                     if (number == y)
                     {
-                        swap(myVector[lastValue],myVector[i]);
+                        temp=myVector[i];
+                        for (int b = i; b > lastValue; b--) {
+                            myVector[b] = myVector[b-1];
+                        }
+                        myVector[lastValue] = temp;
+
+                       // swap(myVector[lastValue],myVector[i]);
                         lastValue++;
                     }
-                    else if (number == 0)
+
 
                 }
 

@@ -17,7 +17,7 @@
 using namespace std;
 
 int main() {
-   vector <int>a=createRandomVector(7);
+   vector <int>a=createRandomVector(100);
    //insertionSort(a,a.size());
     //heapSort(a,a.size());
     //quickSort(a,a.size());
