@@ -28,10 +28,7 @@ int lastValue = 0;
 
     for (int j =1;j<numberOfDigits+1;j++) {
         lastValue = 0;
-        if(j==5)
-        {
-            cout<<"h";
-        }
+
     if(j>=2)
     {
         mNumber *=10;
@@ -40,8 +37,7 @@ int lastValue = 0;
             for(int y =0;y<10;y++)
             {
                 for (int i = 0; i < len; i++) {
-                        if(i==3)
-                            cout<<"";
+
                     number = (myVector[i] % mNumber) / dNumber;
                     if (number == y)
                     {

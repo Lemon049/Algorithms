@@ -30,7 +30,7 @@ void heapSort(vector <int>& myVector, int len)
         whichElement =0;
       //  numberOfSortedElements++;
     }
-    //reverse(myVector.begin(), myVector.end());
+    reverse(myVector.begin(), myVector.end());
 
 
 
