@@ -8,9 +8,13 @@
 using namespace std;
 
 void quickSort(vector<int>& myVector, int itemLeft, int pivot) {
+
     if (itemLeft < pivot) {
+
         int lower = itemLeft;
+
         int higher = pivot;
+
         for (int i = lower; i < higher; i++) {
             if (myVector[i] <= myVector[pivot]){
                 swap(myVector[lower], myVector[i]);

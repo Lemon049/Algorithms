@@ -18,14 +18,14 @@ using namespace std;
 
 int main() {
     int True =0;
-    int size = 5;
+    int size = 100;
    // for( int j =1; j<100;j++)
     {
         vector <int>a=createRandomVector(size);
      //  size++;
         //insertionSort(a,a.size());
         //heapSort(a,a.size());
-        quickSort(a,0,size-1);
+        //quickSort(a,0,size-1);
         //radixSort(a,a.size());
 
         if (is_sorted(a.begin(),a.end()))
