@@ -18,29 +18,29 @@ using namespace std;
 
 int main() {
     int True =0;
-    int size = 10;
-    //for( int j =1; j<100;j++)
+    int size = 5;
+   // for( int j =1; j<100;j++)
     {
         vector <int>a=createRandomVector(size);
-        size++;
+     //  size++;
         //insertionSort(a,a.size());
         //heapSort(a,a.size());
-        quickSort(a,a.size());
+        quickSort(a,0,size-1);
         //radixSort(a,a.size());
 
         if (is_sorted(a.begin(),a.end()))
         {
             True++;
-           // cout<<"true";
+            cout<<"true";
         }
 
-        for( int y=0; y<a.size(); y++)
+       for( int y=0; y<a.size(); y++)
         {
             cout<<" "<<a[y];
         }
 
     }
-    cout<<True;
+  //  cout<<True;
 
 
    return 0;
