@@ -6,22 +6,27 @@
 #include <vector>
 using namespace std;
 
-void insertionSort(vector <int> &myVector, int len) {
-    for (int i = 1 ; i < len ; i++) {
-        int cursore = i;
-        int value = myVector[i];
+ void insertionSort(vector <int>& myVector,int len) {
+    for (int i=1; i<len; i++)
+    {
 
+        for (int j=0; j<i; j++)
         {
-            while (myVector[cursore - 1] > value) {
-                swap(myVector[cursore],myVector[cursore-1]);
-
-                --cursore;
+            if(myVector[j] > myVector[j+1])
+            {
+                int temp = myVector[j+1];
+                int y = j;
+                for(;temp < myVector[y] && y > -1;y-- )
+                {
+                    myVector[y+1]=myVector[y];
+                }
+                myVector[y+1]=temp;
             }
+        //8e-07s
+
+
         }
-        //myVector[cursore] = value;
-
     }
-
 }
 
 #endif

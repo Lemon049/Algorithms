@@ -5,36 +5,63 @@
 #include <algorithm>
 #include <vector>
 using namespace std;
+#include <iostream>
+#include <vector>
 
-void heapify(vector<int>&myVector, int len, int Parents)
-{
-   int leftChild = 2 * Parents + 1;
 
-   int rightChild = 2 * Parents +2;
 
-   if (len >= (leftChild-1))  if (myVector[leftChild-2] > myVector[Parents-1])  swap(myVector[leftChild-2],myVector[Parents-1]);
+void heapify(vector<int>& myVector, int size, int Parent) {
+    
+    int largestNumber = Parent;
+    
+    int left = 2 * Parent + 1;
+    
+    int right = 2 * Parent + 2;
 
-   if (len >= (rightChild-1)) if (myVector[rightChild-2] > myVector[Parents-1]) swap(myVector[rightChild-2],myVector[Parents-1]);
-}
-
-void heapSort(vector<int>&myVector, int len){
-
-    int lastElement = len-1;
-
-    for (int i =0; i < len; )
+    if ( left < size )
     {
-        int Parents = (len)/2;
-        while(Parents != 0)
+        if ( myVector[left] > myVector[Parent])
+        largestNumber = left;
+        if (right < size )
         {
-            heapify(myVector,len,Parents);
-            Parents--;
+            if (myVector[right] > myVector[left] && myVector[right] >myVector[Parent] )
+            {
+                largestNumber = right;
+            }
+
         }
-        swap(myVector[0],myVector[lastElement]);
-        lastElement--;
-        len--;
 
     }
-    //reverse(myVector.begin(),myVector.end());
+
+
+    if (largestNumber != Parent) {
+        swap(myVector[Parent], myVector[largestNumber]);
+        heapify(myVector, size, largestNumber);
+    }
+}
+
+void heapSort(vector<int>& myVector) {
+
+    int size = myVector.size();
+
+    int i = size / 2 - 1;;
+
+    while(i >= 0)
+    {
+        heapify(myVector, size, i);
+        --i;
+    }
+
+    i = size - 1;
+
+    while(i > 0)
+    {
+        swap(myVector[0], myVector[i]);
+        heapify(myVector, i, 0);
+        --i;
+    }
+
+
 
 }
 #endif
