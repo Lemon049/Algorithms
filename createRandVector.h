@@ -15,7 +15,7 @@ vector<int> createRandomVector(int size)
     std::random_device rd;
     std::mt19937 gen(rd());
 
-    std::uniform_int_distribution<int> dist(0, 1000000);
+    std::uniform_int_distribution<int> dist(0, 10000000);
 
     vector<int> vec(size);
     for (int i = 0; i < size; i++)

@@ -68,7 +68,7 @@ void radixSort(vector<int>& myVector) {
             max = myVector[i];
         }
     }
-    
+
     while (max / whichDigit > 0) //Step 3
     {
         //Step 2
