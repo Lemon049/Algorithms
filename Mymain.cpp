@@ -6,7 +6,7 @@
 #include "quickSort.h"
 #include "RadixSort.h"
 
-
+#include <string>
 #include <iostream>
 #include <chrono>
 #include <thread>
@@ -25,6 +25,11 @@ int main() {
     double average2 =0;
     double average3 =0;
     double average4 =0;
+
+    string value1 ;
+    string value2 ;
+    string value3 ;
+    string value4 ;
 
     std::chrono::time_point<std::chrono::system_clock> start, end;
     float ms =0;
@@ -81,16 +86,25 @@ int main() {
         average2 /=100;
         average3 /=100;
         average4 /=100;
-        cout << size << " " << average1 << " " << average2 << " " << average3 << " " << average4 << endl;
-
+        cout << size << " | " << average1 << " | " << average2 << " | " << average3 << " | " << average4 << endl;
+/*
+        value1 += to_string(average1) + ", ";
+        value2 += to_string(average2) + ", ";
+        value3 += to_string(average3) + ", ";
+        value4 += to_string(average4) + ", ";
         average1 = 0;
         average2 = 0;
         average3 = 0;
         average4 = 0;
+        */
     }
+    /*
         cout<<"end";
-
-
+        cout<<"\n"<<value1<<"\n";
+        cout<<"\n"<<value2<<"\n";
+        cout<<"\n"<<value3<<"\n";
+        cout<<"\n"<<value4<<"\n";
+        */
 
 
 
