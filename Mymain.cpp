@@ -5,6 +5,7 @@
 #include "HeapSort.h"
 #include "quickSort.h"
 #include "RadixSort.h"
+#include "hybridSort.h"
 
 #include <string>
 #include <iostream>
@@ -25,17 +26,18 @@ int main() {
     double average2 =0;
     double average3 =0;
     double average4 =0;
+    double average5 =0;
 
     string value1 ;
     string value2 ;
     string value3 ;
     string value4 ;
+    string value5 ;
 
     std::chrono::time_point<std::chrono::system_clock> start, end;
     float ms =0;
-    cout<<"size"<<" quick"<<" radix"<<" insertion"<<" heap"<<endl;
-    vector<int> testSizes = {10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 200,
-                             300, 400, 500, 600, 700, 800, 900, 1000, 2000,
+    cout<<"size"<<" quick"<<" radix"<<" insertion"<<" heap" << " hybrid"<<endl;
+    vector<int> testSizes = { 800, 900, 1000, 2000,
                              3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000};
 
     chrono::duration<double> elapsed_seconds;
@@ -47,6 +49,7 @@ int main() {
             vector<int> myVector2 = myVector;
             vector<int> myVector3 = myVector;
             vector<int> myVector4 = myVector;
+            vector<int> myVector5 = myVector;
 
 
             //-----------------------------------------------------------------
@@ -81,21 +84,32 @@ int main() {
             end = std::chrono::high_resolution_clock::now();
             elapsed_seconds = end - start;
             average4 += elapsed_seconds.count() * 1000.0f;
+            //--------------------------------------------------------------
+            start = std::chrono::high_resolution_clock::now();
+
+            hybridSort(myVector5, 0, myVector.size() - 1, false);
+
+            end = std::chrono::high_resolution_clock::now();
+            elapsed_seconds = end - start;
+            average5 += elapsed_seconds.count() * 1000.0f;
         }
         average1 /=100;
         average2 /=100;
         average3 /=100;
         average4 /=100;
-        cout << size << " | " << average1 << " | " << average2 << " | " << average3 << " | " << average4 << endl;
+        average5 /=100;
+        cout << size << " | " << average1 << " | " << average2 << " | " << average3 << " | " << average4 <<" | "<< average5 << endl;
 /*
         value1 += to_string(average1) + ", ";
         value2 += to_string(average2) + ", ";
         value3 += to_string(average3) + ", ";
         value4 += to_string(average4) + ", ";
+        value4 += to_string(average5) + ", ";
         average1 = 0;
         average2 = 0;
         average3 = 0;
         average4 = 0;
+        average5 = 0;
         */
     }
     /*

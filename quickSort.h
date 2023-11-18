@@ -10,7 +10,7 @@ using namespace std;
 void quickSort(vector<int>& myVector, int itemLeft, int pivot) {
 
     if (itemLeft < pivot) {
-     //partition
+        //partition
         int lower = itemLeft;
 
         int higher = pivot;
@@ -28,8 +28,5 @@ void quickSort(vector<int>& myVector, int itemLeft, int pivot) {
         quickSort(myVector, lower + 1, pivot);
     }
 }
-
-
-
 #endif
 
