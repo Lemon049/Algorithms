@@ -6,7 +6,7 @@
 #include <vector>
 using namespace std;
 
-void insertionSort(vector<int>& xs) {
+void insertionSort(vector<int>& xs ){
     for (int i = 1 ; i < xs.size() ; i++) {
         int val = xs[i];
         int cur = i;

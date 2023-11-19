@@ -37,8 +37,10 @@ int main() {
     std::chrono::time_point<std::chrono::system_clock> start, end;
     float ms =0;
     cout<<"size"<<" quick"<<" radix"<<" insertion"<<" heap" << " hybrid"<<endl;
-    vector<int> testSizes = { 800, 900, 1000, 2000,
+    vector<int> testSizes = { 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 200,
+                              300, 400, 500, 600, 700,800, 900, 1000, 2000,
                              3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000};
+
 
     chrono::duration<double> elapsed_seconds;
     for (int size: testSizes) {
@@ -87,7 +89,7 @@ int main() {
             //--------------------------------------------------------------
             start = std::chrono::high_resolution_clock::now();
 
-            hybridSort(myVector5, 0, myVector.size() - 1, false);
+            hybridSort(myVector5, 0, myVector.size() - 1);
 
             end = std::chrono::high_resolution_clock::now();
             elapsed_seconds = end - start;
