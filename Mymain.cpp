@@ -101,70 +101,25 @@ int main() {
         average4 /=100;
         average5 /=100;
         cout << size << " | " << average1 << " | " << average2 << " | " << average3 << " | " << average4 <<" | "<< average5 << endl;
-/*
+
         value1 += to_string(average1) + ", ";
         value2 += to_string(average2) + ", ";
         value3 += to_string(average3) + ", ";
         value4 += to_string(average4) + ", ";
-        value4 += to_string(average5) + ", ";
+        value5 += to_string(average5) + ", ";
         average1 = 0;
         average2 = 0;
         average3 = 0;
         average4 = 0;
         average5 = 0;
-        */
+
     }
-    /*
+
         cout<<"end";
         cout<<"\n"<<value1<<"\n";
         cout<<"\n"<<value2<<"\n";
         cout<<"\n"<<value3<<"\n";
         cout<<"\n"<<value4<<"\n";
-        */
-
-
-
-
-
-        /*
-        //-----------------------------------------------------------------
-        start = std::chrono::high_resolution_clock::now();
-
-        radixSort(myVector2);
-
-        end = std::chrono::high_resolution_clock::now();
-        elapsed_seconds = end - start;
-        ms = elapsed_seconds.count() * 1000.0f;
-        cout << ms << "  ";
-        //-----------------------------------------------------------------
-        start = std::chrono::high_resolution_clock::now();
-
-        insertionSort(myVector3, size);
-
-        end = std::chrono::high_resolution_clock::now();
-        elapsed_seconds = end - start;
-        ms = elapsed_seconds.count() * 1000.0f;
-        cout << ms << "  ";
-        //-----------------------------------------------------------------
-
-        start = std::chrono::high_resolution_clock::now();
-
-        heapSort(myVector4);
-
-        end = std::chrono::high_resolution_clock::now();
-        elapsed_seconds = end - start;
-        ms = elapsed_seconds.count() * 1000.0f;
-        cout << ms << "  " << endl;
-        //radix(myVector);
-        //insertionsort(myVector);
-        //MainSort(myVector, myVector.size()); //  <-heap sort
-*/
-
-
-
-        //  size++;
-        // quickSort(a,0,size-1);
-        //heapSort(a);
-        //radixSort(a);
+        cout<<"\n"<<value5<<"\n";
         return 0;
 }
